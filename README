@@ -1,0 +1,50 @@
+Nume: Olaru Alexandru
+Grupa: 321 (CD)
+
+In fisierul "in" se afla datele de intrare (testele.in)
+In fisierul "out" se afla testele de referinta
+File-urile best, fermat si miller_rabin reprezinta algoritmii  in limbaj C.
+In file-ul main se vor testa datele de intrare.
+isPrime este un header unde este definit antetul functiei isPrime, functie implementata in best,fermat si miller-rabin
+
+
+Codul pentru cei doi algoritmi au fost preluati de pe https://www.geeksforgeeks.org/primality-test-set-2-fermet-method/ (Fermat),
+respectiv https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/ (Miller-Rabin), initial scrisi in limbajul C++, modificati mai apoi in limbajul C.
+
+Detaliile si explicatiile legate de implementarea algoritmilor se regasesc in scheletul acestora.
+Algoritmul best este acelasi cu miller_rabin.
+
+Am generat 20 de teste, verificarea facandu-se pentru urmatoarele numere:
+
+Testele 1-5 : numere mai mici decat 100:
+    1) 1, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    2) 5, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    3) 24, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    4) 11, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    5) 97, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (PRIM)
+
+Testele 6-10 : numere mai mici decat 10.000:
+    6) 210, cu 5 iteratii. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    7) 811, cu 5 iteratii. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    8) 4999, cu 5 iteratii. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    9) 6024, cu 5 iteratii. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    10) 9949, cu 5 iteratii. -> Afisaza corect cu ambii algoritmi. (PRIM)
+
+Testele 11-15 : numere mai mici decat 100.000:
+    11) 12157, cu 10 iteratii. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    12) 12158, cu 10 iteratii. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    13) 27299, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    14) 45827, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (PRIM)
+    15) 99991, cu 100 iteratii. -> Afisaza incorect cu ambii algoritmi. (NUMARUL ESTE PRIM, SE AFISAZA NEPRIM)
+
+Testele 16-20 : numere mai mari decat 100.000:
+    16) 100002, cu 1 iteratie. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    17) 101807, cu 100 iteratii. -> Afisaza incorect cu ambii algoritmi. (NUMARUL ESTE PRIM, SE AFISAZA NEPRIM)
+    18) 104729, cu 100 iteratii. -> Afisaza incorect cu ambii algoritmi. (NUMARUL ESTE PRIM, SE AFISAZA NEPRIM)
+    19) 1047299, cu 10 iteratii. -> Afisaza corect cu ambii algoritmi. (NEPRIM)
+    20) 9999991, cu 100 iteratii. -> Afisaza incorect cu ambii algoritmi. (NUMARUL ESTE PRIM, SE AFISAZA NEPRIM)
+
+In fisierul out se regasesc fisierele de referinta, in care este scrisa primalitatea reala a numerelor. Asadar, testele 15, 17, 18 si 20 ar fi trebuit sa afiseze exact ceea ce este scris in fisierele de referinta omoloage acestora, deoarece numerele respective sunt prime.
+
+OBSERVATIE :
+    Se observa faptul ca ambii algoritm intorc un rezultat eronat atunci cand numarul care urmeaza a fi verificat este in zona sutelor de mii. Testarea acestora a fost realizata fiind oferit un numar ridicat de iteratii (100), cu toate acestea, rezultatul fiind incorect.
